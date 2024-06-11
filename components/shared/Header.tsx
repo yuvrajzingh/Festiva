@@ -1,6 +1,8 @@
+import { SignedOut } from '@clerk/nextjs'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import { Button } from '../ui/button'
 
 const Header = () => {
   return (
@@ -12,6 +14,16 @@ const Header = () => {
                 alt="Evently logo" 
             />
             </Link>
+
+            <div>
+              <SignedOut>
+                <Button asChild className='rounded-full' size="lg">
+                  <Link href="sign-in">
+                    Login
+                  </Link>
+                </Button>
+              </SignedOut>
+            </div>
         </div>
     </header>
   )
